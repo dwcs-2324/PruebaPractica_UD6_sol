@@ -10,7 +10,7 @@ require 'util.php';
 
 $client = HttpClient::create();
 
-//getOne($client, 1);
+getOne($client, 1);
 
 //getAll($client);
 
@@ -55,8 +55,6 @@ function getAll($client)
 
 function create($client, $data)
 {
-
-
     $response = $client->request('POST', URL_BASE, [
         'json' => $data
     ]);
@@ -75,17 +73,11 @@ function updateParcial($client, $data, $id)
 
 function updateTotal($client, $data, $id)
 {
-
-
     $response = $client->request('PUT', URL_BASE . "/$id", [
         'json' => $data
     ]);
     procesarResponse($response);
 }
-
-
-
-
 
 
 function procesarResponse($response)
@@ -101,9 +93,6 @@ function procesarResponse($response)
         $content = $response->toArray(); // se transforma a un array asociativo
 
         mostrar_json($content);
-
-
-
 
         // $contentType = 'application/json'
         $contentType = $response->getHeaders()['content-type'][0];
