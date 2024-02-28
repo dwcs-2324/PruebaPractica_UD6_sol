@@ -1,0 +1,13 @@
+{
+    "name": "maria/api-client",
+    "description": "Api client",
+    "type": "project",
+    "require": {
+        "symfony/http-client": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maria\\ApiClient\\": "src/"
+        }
+    }
+}
